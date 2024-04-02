@@ -1,0 +1,2 @@
+This is an example of how you can set up an online invoice submission form designed for the Finance Department staff to use for sending invoices to customers. This form will allow staff to upload invoice files and submit them alongside necessary details like the invoice number, customer name, and amount. The form will be built with HTML for the structure, CSS for styling to ensure it's responsive and attractive, and a bit of JavaScript to enhance interactivity and user experience.
+

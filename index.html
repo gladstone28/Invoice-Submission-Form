@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Submission Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Invoice Submission Form</h1>
+        <p>Fill out the form below to submit an invoice to a customer, including the assigned purchase order number.</p>
+
+        <form action="https://formspree.io/f/xwkgrzoe" method="POST" enctype="multipart/form-data">
+            <label for="customerName">Customer Name:</label>
+            <input type="text" id="customerName" name="customerName" required>
+
+            <label for="purchaseOrderNumber">Purchase Order Number:</label>
+            <input type="text" id="purchaseOrderNumber" name="purchaseOrderNumber" required>
+
+            <label for="invoiceNumber">Invoice Number:</label>
+            <input type="text" id="invoiceNumber" name="invoiceNumber" required>
+
+            <label for="invoiceAmount">Invoice Amount ($):</label>
+            <input type="number" id="invoiceAmount" name="invoiceAmount" step="0.01" required>
+
+            <label for="invoiceFile">Upload Invoice File:</label>
+            <input type="file" id="invoiceFile" name="invoiceFile" accept=".pdf" required>
+
+            <button type="submit">Send Invoice</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
