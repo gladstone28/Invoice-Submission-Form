@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice Submission Form</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="form-container">
         <h1>Invoice Submission Form</h1>
-        <p>Fill out the form below to submit an invoice to a customer.</p>
-        <form id="invoiceForm" action="https://yourServerSideEndpoint/" method="post" enctype="multipart/form-data">
+        <p>Fill out the form below to submit an invoice to a customer, including the assigned purchase order number.</p>
+
+        <form id="invoiceForm" action="https://formspree.io/f/xwkgrzoe" method="POST" enctype="multipart/form-data">
+            <!-- Fields for the person completing the form -->
+            <label for="completerName">Your Name:</label>
+            <input type="text" id="completerName" name="completerName" required>
+
+            <label for="completerEmail">Your Email:</label>
+            <input type="email" id="completerEmail" name="completerEmail" required>
+            
             <label for="customerName">Customer Name:</label>
             <input type="text" id="customerName" name="customerName" required>
+
+            <label for="purchaseOrderNumber">Purchase Order Number:</label>
+            <input type="text" id="purchaseOrderNumber" name="purchaseOrderNumber" required>
 
             <label for="invoiceNumber">Invoice Number:</label>
             <input type="text" id="invoiceNumber" name="invoiceNumber" required>
@@ -29,4 +42,13 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
+
+<script>
+    document.getElementById('invoiceForm').onsubmit = function(event) {
+        event.preventDefault(); // Prevent traditional form submission
+        alert('Invoice has been sent successfully!');
+        // Here you can add AJAX/Fetch API submission logic
+    };
+</script>
